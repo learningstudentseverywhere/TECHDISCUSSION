@@ -7,13 +7,13 @@ POST  http://localhost:4004/odata/v4/school/Students
 Content-Type: application/json
 
 {
-    "student_id":"3004",
+    "student_id":"3001",
     "student_name":"Parthipan"
 }
 
 
 ###
-PATCH http://localhost:4005/odata/v4/school/Students(student_id='2001')
+PATCH http://localhost:4004/odata/v4/school/Students(student_id='3001')
 Content-Type: application/json
 
 {
@@ -45,3 +45,13 @@ GET http://localhost:4004/odata/v4/school/StudentFees?$filter=student_id eq '100
 
 ###
 GET http://localhost:4004/odata/v4/school/CompleteStudentInfo(student_id='1001')
+
+
+###
+POST  http://localhost:4004/odata/v4/school/Student_Hostel
+Content-Type: application/json
+
+{
+
+    "room_no":"223"
+}

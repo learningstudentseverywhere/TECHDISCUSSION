@@ -17,7 +17,7 @@ module.exports = cds.service.impl(
     });
 
 
-    this.after('CREATE','Students',async req=>{
+    this.after('CREATE','Students',async req=>{   
           console.log('Entered After condition');
           let student_id = req.student_id;
           let insertedSuccessfully = await INSERT.into('techdiscussion_Logs').entries({student_id:student_id,message:"Successfully Created Student Record"});

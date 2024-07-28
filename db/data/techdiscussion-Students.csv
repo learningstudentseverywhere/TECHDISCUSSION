@@ -1,4 +1,4 @@
-student_id;student_name
-1001;Sakthivel
-1002;Vetrivel
-1003;Sathya
+student_id;student_name;student_location
+1001;Sakthivel;tiruppur
+1002;Vetrivel;cbe
+1003;Sathya;chennai
