@@ -3,12 +3,12 @@ GET http://localhost:4005/odata/v4/school/Students?$expand=to_StudentMarks
 
 
 ###
-POST  http://localhost:4005/odata/v4/school/Students
+POST  http://localhost:4004/odata/v4/school/Students
 Content-Type: application/json
 
 {
-    "student_id":"2001",
-    "student_name":"Juggu"
+    "student_id":"3004",
+    "student_name":"Parthipan"
 }
 
 
@@ -23,3 +23,25 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:4005/odata/v4/school/Students(student_id='2001')
+
+
+###
+GET http://localhost:4004/odata/v4/school/Students(student_id='1001')
+
+
+###
+GET http://localhost:4004/odata/v4/school/Students(student_id='1001')
+
+
+###
+GET http://localhost:4004/odata/v4/school/StudentMarks?$filter=student_id eq '1001'
+
+
+
+###
+GET http://localhost:4004/odata/v4/school/StudentFees?$filter=student_id eq '1001'
+
+
+
+###
+GET http://localhost:4004/odata/v4/school/CompleteStudentInfo(student_id='1001')
