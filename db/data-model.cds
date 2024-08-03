@@ -48,3 +48,19 @@ entity Student_Hostel:cuid{
     room_no:String;
 }
 
+entity CollegeStudents{
+    key student_id:String(10);
+        studnet_name : String;
+       
+
+}
+
+entity CollegeStaffs{
+    key staff_id : String(10);
+        staff_name : String;
+}
+
+entity CollegeEmployee{
+    key employee_id : String(10);
+        employee_name : String;
+}

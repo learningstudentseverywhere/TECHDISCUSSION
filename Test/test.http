@@ -55,3 +55,7 @@ Content-Type: application/json
 
     "room_no":"223"
 }
+
+
+###
+GET http://localhost:4004/odata/v4/college/GetAllPersonData(Input='1001')

@@ -11,3 +11,36 @@ service SchoolService{
     entity Student_Hostel as projection on my.Student_Hostel;
 }
 
+service CollegeService{
+   entity CollegeStudents as projection on my.CollegeStudents;
+   entity CollegeStaffs as projection on my.CollegeStaffs;
+   entity CollegeEmployee as projection on my.CollegeEmployee;
+
+   type CollegeStudnetsStructure{
+        student_id:String(10);
+        studnet_nam : String;
+        Age:String;
+   }
+ 
+   type CollegeStaffsStructure{
+       staff_id : String(10);
+       staff_name : String;
+   }
+
+   type CollegeEmployeeStructure {
+        employee_id : String(10);
+        employee_name : String;
+   }
+   type CompleteData  {
+      CollegeStudents : Array of CollegeStudnetsStructure;
+      CollegeStaffs :CollegeStaffsStructure;
+      CollegeEmployee : Array of CollegeEmployeeStructure;
+   }
+
+
+//    type EmployeeId{
+//         employee_id : String;
+//    }
+
+   function GetAllPersonData(Input:String) returns CompleteData;
+}
