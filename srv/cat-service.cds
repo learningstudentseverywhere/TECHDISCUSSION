@@ -10,3 +10,4 @@ service SchoolService{
     entity CompleteStudentInfo as projection on my.CompleteStudentInfo;
     entity Student_Hostel as projection on my.Student_Hostel;
 }
+
