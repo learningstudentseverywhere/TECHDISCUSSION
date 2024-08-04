@@ -59,3 +59,13 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4004/odata/v4/college/GetAllPersonData(Input='1001')
+
+
+
+###
+POST http://localhost:4004/odata/v4/college/GetAllPersonDataAction
+Content-Type: application/json
+
+{
+  
+}

@@ -38,9 +38,16 @@ service CollegeService{
    }
 
 
-//    type EmployeeId{
-//         employee_id : String;
-//    }
+   type EmployeeStructure{
+        employee_id : String;
+        employee_name : String;
+        employee_age : String;
+        employee_phone_no : Array of String;
+   }
 
    function GetAllPersonData(Input:String) returns CompleteData;
+
+
+   //Action
+   action GetAllPersonDataAction(Input:EmployeeStructure) returns CompleteData;
 }
