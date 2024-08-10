@@ -9,6 +9,28 @@ service SchoolService{
     entity Logs as projection on my.Logs;
     entity CompleteStudentInfo as projection on my.CompleteStudentInfo;
     entity Student_Hostel as projection on my.Student_Hostel;
+
+     //Basic, consumption,composite
+     //ZCDSB,ZCDSI,ZCDSC
+    //Creating a cds view for students table and students marks table
+    entity ViewForStudents as select 
+    key A.student_id,
+    key A.student_name,
+        B.subject,
+        B.marks 
+    from Students as A 
+    inner join StudentMarks as B 
+    on A.student_id = B.student_id;
+
+//Left outer join
+     entity ViewForStudentsLeft as select 
+    key A.student_id,
+    key A.student_name,
+        B.subject,
+        B.marks 
+    from Students as A 
+    left join StudentMarks as B 
+    on A.student_id = B.student_id;
 }
 
 service CollegeService{
@@ -50,4 +72,7 @@ service CollegeService{
 
    //Action
    action GetAllPersonDataAction(Input:EmployeeStructure) returns CompleteData;
+
+
+
 }
