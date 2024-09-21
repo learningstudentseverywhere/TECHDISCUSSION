@@ -1,29 +1,155 @@
-<mvc:View controllerName="com.tech.techdiscussionui.controller.Home"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content >
+<mvc:View
+    controllerName="com.tech.techdiscussionui.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:sfb="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <IconTabBar
+                id="idIconTabBarInlineMode"
+                headerMode="Inline"
+                expanded="{device>/isNoPhone}"
+                class="sapUiResponsiveContentPadding"
+            >
+                <items>
+                    <IconTabFilter
+                        text="Get Student Data"
+                        key="info"
+                    >
+                        <VBox id="Box1">
+                            <Label
+                                id="label1"
+                                text="Enter Student Id"
+                                class="sapUiMediumMarginBegin"
+                            />
+                            <Input
+                                id="Input1"
+                                value="{studentLocalModel>/studentid}"
+                            />
+                            <Button
+                                id="idButton2"
+                                text="Get Student Name"
+                                press="getDatafromservice"
+                                class="sapUiMediumMarginBegin"
+                            />
+                            <Input
+                                id="Output1"
+                                value=""
+                                editable="false"
+                            />
+                        </VBox>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        text="Create Student Data"
+                        key="attachments"
+                    >
+                        <VBox
+                            id="Box2"
+                            class="sapUiMediumMarginBegin sapUiMediumMarginTop"
+                        >
+                            <Label
+                                id="label2"
+                                text="Enter Student Id"
+                                class="sapUiMediumMarginBegin"
+                            />
+                            <Input
+                                id="Input2"
+                                value=""
+                            />
 
-     <VBox id="Box1">
-     <Label id="label1" text="Enter Student Id" class="sapUiMediumMarginBegin"/>
-     <Input id="Input1" value=""  />
-     <Button id="idButton2" text="Get Student Name"  press="getDatafromservice" class="sapUiMediumMarginBegin"/>
-      <Input id="Output1" value="" editable="false"  />
-    </VBox>
+                            <Label
+                                id="label3"
+                                text="Enter Student Name"
+                                class="sapUiMediumMarginBegin"
+                            />
+                            <Input
+                                id="Input3"
+                                value=""
+                            />
 
-    <VBox id="Box2" class="sapUiMediumMarginBegin sapUiMediumMarginTop">
-    <Label id="label2" text="Enter Student Id" class="sapUiMediumMarginBegin" />
-     <Input id="Input2" value=""  />
+                            <Label
+                                id="label4"
+                                text="Enter Student Location"
+                                class="sapUiMediumMarginBegin"
+                            />
+                            <Input
+                                id="Input4"
+                                value=""
+                            />
 
-     <Label id="label3" text="Enter Student Name" class="sapUiMediumMarginBegin" />
-     <Input id="Input3" value=""  />
+                            <Button
+                                id="createStudentButton"
+                                text="Create Student"
+                                press="createStudent"
+                            />
+                        </VBox>
+                    </IconTabFilter>
 
-       <Label id="label4" text="Enter Student Location" class="sapUiMediumMarginBegin" />
-     <Input id="Input4" value=""  />
+                    <IconTabFilter
+                        text="Get All Student Data in Table"
+                        key="attachments"
+                    >
+                        <HBox>
+                            <Input
+                                id="Input5"
+                                value="{studentLocalModel>/studentIdForTable}"
+                                editable="true"
+                            />
+                            <Button
+                                id="createStudentButton2"
+                                text="Go"
+                                press="GetAllStudentData"
+                            />
+                        </HBox>
 
-     <Button id="createStudentButton" text="Create Student" press="createStudent" />
-    </VBox>
-     
+                        <Table
+                            id="idProductsTable"
+                            items="{
+		                      	path: 'studentLocalModel>/AllStudentData'}"
+                        >
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Student Id" />
+                                </Column>
+                                <Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <Text text="Student Name" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <Text
+                                            text="{studentLocalModel>student_id}"
+                                        />
+                                        <Text
+                                            text="{studentLocalModel>student_name}"
+                                        />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+
+                    <IconTabFilter
+                        text="Smart controls"
+                        key="attachments"
+                    >
+                        <sfb:SmartFilterBar id="smartFilterBar" entitySet="Students" enableBasicSearch="false"> </sfb:SmartFilterBar>
+
+                        	<smartTable:SmartTable id="LineItemsSmartTable" entitySet="Students" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true" > </smartTable:SmartTable>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
         </content>
     </Page>
 </mvc:View>

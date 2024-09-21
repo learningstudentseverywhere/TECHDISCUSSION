@@ -12,10 +12,7 @@ function (Controller) {
         getDatafromservice:function(){
           let that = this
          //Getting value from the Input Box
-         //let inputBoxValue = this.getView().byId('Input1').getValue();
-         //Importing model
-         let oModel = this.getView().getModel("studentLocalModel")
-         let inputBoxValue = oModel.getProperty("/studentid");
+         let inputBoxValue = this.getView().byId('Input1').getValue();
 
          //Send the values to the backend- Odata v4
          $.ajax({
@@ -63,25 +60,9 @@ function (Controller) {
                 console.log(error);
             }
           })
-        },
+        }
         //Patch,Delete -- Try
 
-        //Get All Student Data
-        GetAllStudentData : function(){
-          let oModel = this.getView().getModel("studentLocalModel");
-          let studentIdforTable = oModel.getProperty("/studentIdForTable");
-          $.ajax({
-            url:`/odata/v4/school/Students`,
-            dataType:"json",
-            success:function(data){
-               oModel.setProperty("/AllStudentData",data.value);
-
-            },
-            error:function(error){
-                console.log('Error Occured');
-            }
-         })
-        }
       
     });
 });

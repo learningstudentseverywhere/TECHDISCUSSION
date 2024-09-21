@@ -5,10 +5,9 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "com/tech/techdiscussionui/model/models",
-        "sap/ui/model/json/JSONModel"
+        "com/tech/techdiscussionui/model/models"
     ],
-    function (UIComponent, Device, models,JSONModel) {
+    function (UIComponent, Device, models) {
         "use strict";
 
         return UIComponent.extend("com.tech.techdiscussionui.Component", {
@@ -30,20 +29,6 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
-
-
-                //Creating a local Model
-                let PropertiesForModel = {
-                    "studentid":"Sakthi",
-                    "studentName":"",
-                    "studentIdForTable":"",
-                    "AllStudentData":[
-
-                    ]
-                }
-
-                this.setModel(new JSONModel(PropertiesForModel),"studentLocalModel")
-           
             }
         });
     }

@@ -1,0 +1,29 @@
+<mvc:View controllerName="com.tech.techdiscussionui.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+
+     <VBox id="Box1">
+     <Label id="label1" text="Enter Student Id" class="sapUiMediumMarginBegin"/>
+     <Input id="Input1" value=""  />
+     <Button id="idButton2" text="Get Student Name"  press="getDatafromservice" class="sapUiMediumMarginBegin"/>
+      <Input id="Output1" value="" editable="false"  />
+    </VBox>
+
+    <VBox id="Box2" class="sapUiMediumMarginBegin sapUiMediumMarginTop">
+    <Label id="label2" text="Enter Student Id" class="sapUiMediumMarginBegin" />
+     <Input id="Input2" value=""  />
+
+     <Label id="label3" text="Enter Student Name" class="sapUiMediumMarginBegin" />
+     <Input id="Input3" value=""  />
+
+       <Label id="label4" text="Enter Student Location" class="sapUiMediumMarginBegin" />
+     <Input id="Input4" value=""  />
+
+     <Button id="createStudentButton" text="Create Student" press="createStudent" />
+    </VBox>
+     
+        </content>
+    </Page>
+</mvc:View>
