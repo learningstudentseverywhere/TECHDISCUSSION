@@ -146,7 +146,7 @@
                     >
                         <sfb:SmartFilterBar id="smartFilterBar" entitySet="Students" enableBasicSearch="false"> </sfb:SmartFilterBar>
 
-                        	<smartTable:SmartTable id="LineItemsSmartTable" entitySet="Students" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true" > </smartTable:SmartTable>
+                        <smartTable:SmartTable id="LineItemsSmartTable" entitySet="Students" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true" > </smartTable:SmartTable>
                     </IconTabFilter>
                 </items>
             </IconTabBar>
